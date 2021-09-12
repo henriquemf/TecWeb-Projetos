@@ -1,0 +1,43 @@
+<link rel="stylesheet" type="text/css" href="../getit.css" />
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <div class="card">
+    <div class="post-it" id="post-it-{id}">
+
+      <div class="card-content">
+        <h3 class="card-title">{title}</h3>
+        <div class="card-details">
+          <p>
+            {details}
+          </p>
+        </div>
+      </div>
+      <div class = "general-update">
+        <button class="update-btn" onclick="editScreen({id})"><i class="fas fa-edit"></i></button>
+        <form method="POST">
+          <input type="hidden" name="method" value="DELETE">
+          <input type="hidden" name="id" value="{id}"/>
+          <button class= "update-btn" type="submit"><i class="far fa-trash-alt"></i></button>
+        </form>  
+      </div>
+    </div>
+
+    <div class="general-up" id="general-up-{id}">
+
+      <form class="update-form" method="POST">
+        <input type="hidden" name="method" value="UPDATE">
+        <input type="hidden" name="id" value="{id}"/>
+
+        <div class="card-content">
+            <input class="title-update" type="title" name="title" value="{title}"/>
+            <textarea class="content-update" name="details">{details}</textarea>
+        </div>
+
+        <div class = "general-update">
+          <button class="update-btn" type="submit"><i class="fas fa-check"></i></button>
+          <button class="update-btn" onclick="outEditScreen({id})"><i class="far fa-arrow-alt-circle-left"></i></button>
+        </div>
+
+      </form>
+    </div>
+  </div>
