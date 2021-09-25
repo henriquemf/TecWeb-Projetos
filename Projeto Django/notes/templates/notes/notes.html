@@ -1,0 +1,28 @@
+{% extends "notes/index.html" %}
+{% load static %}
+
+{% block notes %}
+
+<form method="post" class="form-card">
+  {% csrf_token %}
+  <input
+    class="form-card-title"
+    type="text"
+    name="titulo"
+    placeholder="Título"
+  />
+  <textarea
+    class="autoresize"
+    name="detalhes"
+    placeholder="Digite o conteúdo..."
+  ></textarea>
+  <button class="btn" type="submit">Criar</button>
+</form>
+
+<div class="card-container">
+  {% for note in notes %}
+    {% include "notes/form.html" %}
+  {% endfor %}
+</div>
+  
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block index %}
+
+<div class="appbar">
+  <img src="{% static 'notes/img/logo-getit.png' %}" class="logo" />
+  <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+</div>
+
+<main class="container">
+    {% block notes %}
+    {% endblock %}
+</main>
+
+{% endblock %}

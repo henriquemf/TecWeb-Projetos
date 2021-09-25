@@ -1,0 +1,258 @@
+/*
+Algumas informações úteis e dicas:
+  - Fontes disponíveis:
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+  - Cores:
+    Tons de amarelo:
+      #e4fc2b
+      #e0d426
+      #f7d736
+      #e0af26
+      #fcb02b
+    Tons de cinza:
+      #2c2c2c
+      #4c4c4c
+    Cores dos cards:
+      #ead3a7
+      #9de0f5
+      #ef89ba
+      #fae890
+      #abe9c1
+  - Sombra: https://codepen.io/sdthornton/pen/wBZdXq
+ */
+
+ html,
+ body {
+   font-family: "Roboto", sans-serif;
+   display: flex;
+   flex-direction: column;
+   background-color: #111111;
+ }
+
+ .appbar{
+   display: flex;
+   flex-direction: row;
+   padding: 0.4rem;
+   box-shadow: 5px 2px 3px grey; 
+   background-image: linear-gradient(to bottom right,purple,navy, black );
+   width: 100%;
+   height: 8%;
+ }
+ 
+ .autoresize{
+   width: 100%;
+   padding: 0.2rem;
+   background-color: black;
+   color: white;
+ }
+ 
+ .btn{
+   width: 100%;
+   border-radius: 0.3rem;
+   padding: 0.5rem ;
+   background-image: radial-gradient(purple,black);
+   color: rgb(255, 255, 255);
+   font-size: large;
+ }
+
+ .btn:hover{
+   opacity: 0.7;
+ }
+ 
+ .card-container{
+   display: flex;
+   flex-wrap: wrap;
+   padding-left:1.5em;
+   padding-right: 1.8em;
+   justify-content: space-evenly;
+   width: 100%;
+ }
+ 
+ .card{
+  display: inline-block;
+  height: 6.5em;
+  width:14%;
+  padding:0.5rem;
+  margin: 0.4rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+ }
+
+.card-title{
+  font-size: 1.3vw;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+  font-family: 'Permanent Marker', cursive;
+  color: rgb(0, 0, 0);
+}
+
+.card-details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size:smaller;
+  color: rgb(0, 0, 0);
+}
+
+.card-content{
+  font-size: smaller;
+  display: flex;
+  font-family: 'Permanent Marker', cursive;
+  color: #2c2c2c;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #111111;
+}
+
+.form-card{
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 1rem;
+  width: 40%;
+  height: 40%;
+  border-radius: 0.25rem;
+  align-self: center;
+  background-color: #000000;
+  box-shadow: 0 5px 5px 2px rgb(87, 87, 87); 
+}
+
+.form-card-title{
+  width: 100%;
+  font-size: 2vw;
+  padding: 0.25rem;
+  border: white;
+  background-color: black;
+  color: white;
+}
+
+.content-update{
+  font-size: smaller;
+  width: 100%;
+  height: 60%;
+  resize: none;
+  background:none;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.general-up{
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: row;
+}
+
+.general-update{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 2.8rem;
+}
+
+.update-btn{
+  background-image: radial-gradient(purple 10%,black 90%);
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 3.2rem;
+  padding: 0.2rem;
+  margin: 1rem;
+}
+
+.update-btn:hover{
+  opacity: 0.6;
+}
+
+.update-form{
+  display: flex;
+  flex-direction: row;
+}
+
+.title-update{
+  margin-bottom: 0.4rem;
+  width: 100%;
+  background: none;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.post-it{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.logo{
+  align-items: flex-start;
+  max-width: 5%;
+  height: 5%;
+}
+
+.subtitle{
+  padding: 0.7rem;
+  color: white;
+}
+
+.card-color-1{
+background-color: #9f9df5;
+box-shadow: 7px 3px 10px #132fcc;
+}
+.card-color-2{
+background-color: #c04d4d;
+box-shadow: 7px 3px 10px #df0505;
+}
+.card-color-3{
+background-color: #ead3a7;
+box-shadow: 7px 3px 10px #da9c29;
+}
+.card-color-4{
+background-color: #abe9c1;
+box-shadow: 7px 3px 10px #18eb62;
+}
+.card-color-5{
+background-color: #904097;
+box-shadow: 7px 3px 10px #b800be;
+}
+
+.card-rotation-1{
+transform: rotate(0deg);
+}
+.card-rotation-2{
+transform: rotate(1deg);
+}
+.card-rotation-3{
+transform: rotate(2deg);
+}
+.card-rotation-4{
+transform: rotate(3deg);
+}
+.card-rotation-5{
+transform: rotate(4deg);
+}
+.card-rotation-6{
+transform: rotate(5deg);
+}
+.card-rotation-7{
+transform: rotate(-1deg);
+}
+.card-rotation-8{
+transform: rotate(-2deg);
+}
+.card-rotation-9{
+transform: rotate(-3deg);
+}
+.card-rotation-10{
+transform: rotate(-4deg);
+}
+.card-rotation-11{
+transform: rotate(-5deg);
+}

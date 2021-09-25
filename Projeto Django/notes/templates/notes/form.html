@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="post-it" id="post-it-{{note.id}}">
+
+    <div class="card-content">
+      <h3 class="card-title">{{note.title}}</h3>
+      <div class="card-details">
+        <p>
+          {{note.content}}
+        </p>
+      </div>
+    </div>
+    <div class = "general-update">
+      <button class="update-btn" onclick="editScreen('{{note.id}}')"><i class="fas fa-edit"></i></button>
+      <form method="POST">
+        <input type="hidden" name="method" value="DELETE">
+        <input type="hidden" name="id" value="{{note.id}}"/>
+        <button class= "update-btn" type="submit"><i class="far fa-trash-alt"></i></button>
+      </form>  
+    </div>
+  </div>
+
+  <div class="general-up" id="general-up-{{note.id}}">
+
+    <form class="update-form" method="POST">
+      <input type="hidden" name="method" value="UPDATE">
+      <input type="hidden" name="id" value="{{note.id}}"/>
+
+      <div class="card-content">
+          <input class="title-update" type="title" name="title" value="{{note.title}}"/>
+          <textarea class="content-update" name="details">{{note.content}}</textarea>
+      </div>
+
+      <div class = "general-update">
+        <button class="update-btn" type="submit"><i class="fas fa-check"></i></button>
+        <button class="update-btn" onclick="outEditScreen('{{note.id}}')"><i class="far fa-arrow-alt-circle-left"></i></button>
+      </div>
+
+    </form>
+  </div>
+</div>
