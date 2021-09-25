@@ -8,6 +8,21 @@
   <span class="subtitle">Como o Post-it, mas com outro verbo</span>
 </div>
 
+<body>
+  <input type="checkbox" id="check">
+  <label for="check">
+      <i class="glyphicon glyphicon-align-justify" id="btn"></i>
+      <i class="glyphicon glyphicon-remove" id="cancel"></i>
+  </label>
+  <div class="sidebar">
+      <header>Menu</header>
+      <ul>
+          <li><a href="{% url 'index' %}"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+          <li><a href="{% url 'tagId' %}"><i class="glyphicon glyphicon-pushpin"></i>Tags</a></li>
+      </ul>
+  </div>
+</body>
+
 <main class="container">
     {% block notes %}
     {% endblock %}

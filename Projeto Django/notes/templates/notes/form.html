@@ -10,29 +10,29 @@
       </div>
     </div>
     <div class = "general-update">
-      <button class="update-btn" onclick="editScreen('{{note.id}}')"><i class="fas fa-edit"></i></button>
-      <form method="POST">
-        <input type="hidden" name="method" value="DELETE">
+      <button class="update-btn" onclick="editScreen('{{note.id}}')"><i class="glyphicon glyphicon-edit"></i></button>
+      <form method="post" action="{% url 'noteDelete' %}">
+        {% csrf_token %}
         <input type="hidden" name="id" value="{{note.id}}"/>
-        <button class= "update-btn" type="submit"><i class="far fa-trash-alt"></i></button>
+        <button class= "update-btn" type="submit"><i class="glyphicon glyphicon-trash"></i></button>
       </form>  
     </div>
   </div>
 
   <div class="general-up" id="general-up-{{note.id}}">
 
-    <form class="update-form" method="POST">
-      <input type="hidden" name="method" value="UPDATE">
+    <form class="update-form" method="post" action="{% url 'noteUpdate' note.id %}">
+      {% csrf_token %}
       <input type="hidden" name="id" value="{{note.id}}"/>
 
       <div class="card-content">
-          <input class="title-update" type="title" name="title" value="{{note.title}}"/>
-          <textarea class="content-update" name="details">{{note.content}}</textarea>
+          <input class="title-update" type="title" name="titulo" value="{{note.title}}"/>
+          <textarea class="content-update" name="detalhes">{{note.content}}</textarea>
       </div>
 
       <div class = "general-update">
-        <button class="update-btn" type="submit"><i class="fas fa-check"></i></button>
-        <button class="update-btn" onclick="outEditScreen('{{note.id}}')"><i class="far fa-arrow-alt-circle-left"></i></button>
+        <button class="update-btn" type="submit"><i class="glyphicon glyphicon-check"></i></button>
+        <button class="update-btn" onclick="outEditScreen('{{note.id}}')"><i class="glyphicon glyphicon-arrow-left"></i></button>
       </div>
 
     </form>

@@ -1,0 +1,31 @@
+{% extends "notes/viewTags.html" %}
+{% load static %}
+{% block content %}
+
+<title>Tagged Notes</title>
+
+<div class="appbar">
+    <img src="{% static 'notes/img/logo-getit.png' %}" class="logo" />
+    <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+</div>
+
+<div class="sidebar">
+    <header>Notas</header>
+    <ul>
+        <li><a href="{% url 'index' %}"><i class="fas fa-qrcode"></i>Home</a></li>
+        <li><a href="{% url 'tags' %}"><i class="fas fa-link"></i>Tags</a></li>
+    </ul>
+</div>
+
+<div class="card-container">
+    <div class="box">
+        <h2>All Tags</h2>
+        {% for tag in tags %}
+        <ul>
+            <li> <a href="{% url 'tag_details' tag.id %}"><span>{{tag.id}}</span>{{tag.tag}}</a></li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
