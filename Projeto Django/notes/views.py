@@ -37,7 +37,7 @@ def noteUpdate(request,id):
 #----------------- Tags --------------------
 
 def tagId(request):
-    return render(request, 'notes/viewTags.html', {'notes': Tags.objects.all()})
+    return render(request, 'notes/viewTags.html', {'tags': Tags.objects.all()})
 
 def tagContent(request, tagid):
     return render(request, 'notes/viewTaggedNotes.html', {'notes': Note.objects.filter(tag=tagid)})

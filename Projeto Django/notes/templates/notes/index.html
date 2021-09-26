@@ -8,7 +8,7 @@
   <span class="subtitle">Como o Post-it, mas com outro verbo</span>
 </div>
 
-<body>
+<div class="menu">
   <input type="checkbox" id="check">
   <label for="check">
       <i class="glyphicon glyphicon-align-justify" id="btn"></i>
@@ -21,10 +21,10 @@
           <li><a href="{% url 'tagId' %}"><i class="glyphicon glyphicon-pushpin"></i>Tags</a></li>
       </ul>
   </div>
-</body>
+</div>
 
 <main class="container">
-    {% block notes %}
+    {% block content %}
     {% endblock %}
 </main>
 
