@@ -112,9 +112,10 @@ Algumas informações úteis e dicas:
 }
 
 .card-title{
-  font-size: 1.3vw;
+  font-size: 1vw;
   word-wrap: break-word;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
+  margin-top: -0.1rem;
   font-family: 'Permanent Marker', cursive;
   color: rgb(0, 0, 0);
 }
@@ -284,6 +285,7 @@ label #cancel{
   align-items: center;
   height: 300px;
   background: #111111;
+  color: white;
 }
 
 .tags-box{
