@@ -191,7 +191,7 @@ Algumas informações úteis e dicas:
   color: white;
   text-align: center;
   line-height: 70px;
-  background: gray;
+  background-image: radial-gradient(purple,black);
   user-select: none;
 }
 

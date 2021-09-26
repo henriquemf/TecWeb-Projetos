@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Note
-from .models import Tags
+from .models import Note,Tags
 
 #----------------- Notes --------------------
 
@@ -8,7 +7,10 @@ def index(request):
     if request.method == 'POST':
         title = request.POST.get('titulo')
         content = request.POST.get('detalhes')
-        Note(title = title, content = content).save()
+        tag, checkCreation = Tags.objects.get_or_create(tag=request.POST.get('tag'))
+        if checkCreation:
+            tag.save()
+        Note(title = title, content = content, tag = tag).save()
         return redirect('index')
     else:
         allNotes = Note.objects.all()
@@ -25,15 +27,17 @@ def noteUpdate(request,id):
     # print("REQUEST AQUI {0}".format(request.POST))
     # print("TITLE AQUI {0}".format(title))
     # print(content)
-    #o erro era que estava em português aqui e em inglês no html...
-    Note.objects.filter(id=id).update(title = title, content = content)
+    #o erro era que estava em português aqui e em inglês no html... (ATENÇÃO A ISSO!)
+    tag, checkCreation = Tags.objects.get_or_create(tag=request.POST.get('tag'))
+    if checkCreation:
+        tag.save()
+    Note.objects.filter(id=id).update(title = title, content = content, tag=tag)
     return redirect('index')
 
 #----------------- Tags --------------------
 
 def tagId(request):
-    allTags = Tags.objects.all()
-    return render(request, 'notes/viewTags.html', {'notes': allTags})
+    return render(request, 'notes/viewTags.html', {'notes': Tags.objects.all()})
 
 def tagContent(request, tagid):
-    pass
+    return render(request, 'notes/viewTaggedNotes.html', {'notes': Note.objects.filter(tag=tagid)})

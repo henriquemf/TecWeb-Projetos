@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<title>Menu</title>
+<title>Tags</title>
 
 <div class="appbar">
     <img src="{% static 'notes/img/logo-getit.png' %}" class="logo" />
@@ -19,9 +19,20 @@
         <header>Menu</header>
         <ul>
             <li><a href="{% url 'index' %}"><i class="glyphicon glyphicon-home"></i>Home</a></li>
-            <li><a href="#"><i class="glyphicon glyphicon-pushpin"></i>Tags</a></li>
+            <li><a href="{% url 'tagId' %}"><i class="glyphicon glyphicon-pushpin"></i>Tags</a></li>
         </ul>
     </div>
 </body>
+
+<div class="tags">
+    <div class="tags-box">
+        <h2>Tags</h2>
+        {% for tag in tags %}
+        <ul>
+            <li> <a href="{% url 'tagContent' tag.id %}"><span>{{tag.id}}</span>{{tag.tag}}</a></li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
