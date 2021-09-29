@@ -4,7 +4,7 @@
 **Site para visualizar Projeto 1B:** https://floating-dusk-25746.herokuapp.com
 
 
-Projeto 1A feito por:
+Projeto 1A feito por (Executar pelo Microsoft Edge para evitar erros):
 - Henrique Martinelli Frezzatti
 
 Projeto 1B (Django) feito por:
